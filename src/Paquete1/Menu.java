@@ -37,7 +37,7 @@ public class Menu extends JFrame implements ActionListener{
 		private JTextField txtNomJugador;
 
 
-		private JButton iniciarJuego;
+		private JButton iniciarJuego, botonSalir;
 
 
 		private JLabel labelnombreJugador2;
@@ -65,6 +65,12 @@ public class Menu extends JFrame implements ActionListener{
 			panelMenu.setLocation(0,0);
 			panelMenu.setVisible(true);
 			ventanaMenu.add(panelMenu,0); 
+			
+			botonSalir = new JButton("Salir");
+            botonSalir.setBounds(55, 25, 100, 50);
+            botonSalir.setFont(new Font("Showcard Gothic", Font.PLAIN, 20));
+            botonSalir.addActionListener(this);
+            ventanaMenu.add(botonSalir);
 			
 			//Propiedades del label
 			
@@ -225,6 +231,14 @@ public class Menu extends JFrame implements ActionListener{
 			boolean confirmacion1 = false;
 			boolean confirmacion2 = false;
 			
+			if (e.getSource() == botonSalir) {
+			   
+			   ventanaMenu.setVisible(false);
+			   
+			   MenuDeInicio ventana = new MenuDeInicio();
+		       ventana.setVisible(true);
+		       
+			}
 			
 			if (e.getSource() == boton1dificultad) {
 				boton2dificultad.setSelected(false);;
@@ -296,10 +310,13 @@ public class Menu extends JFrame implements ActionListener{
 					
 					tablero.ventanaPartida(tamTablero, cartasAJugar, modalidad);
 					
+					if (boton2modo.isSelected() == true ) {
+					   tablero.labelNombreJugadorDos.setText(labelnombreJugador2.getText());
+					}
 					
 					//Para pasar el nombre del jugador a la clase Juego
 					tablero.nombreJugador.setText(nombreJugador.getText());
-					tablero.labelNombreJugadorDos.setText(labelnombreJugador2.getText());
+					
 					
 					if (boton1dificultad.isSelected() == true) {
 						

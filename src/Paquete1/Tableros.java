@@ -2,6 +2,8 @@ package Paquete1;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.Timer;
@@ -14,7 +16,7 @@ import javax.swing.JLayeredPane;
 import javax.swing.JOptionPane;
 
 
-public class Tableros{
+public class Tableros implements ActionListener{
 private JLabel fondoPanel, fondoPanelGeneral;
 	JLabel nombreJugador;
 
@@ -51,6 +53,8 @@ private JLabel fondoPanel, fondoPanelGeneral;
 	
 	JLabel labelNombreJugadorDos;
 	
+	private JButton botonSalir;
+	
 	private JLabel ponerPuntuacion; //Label de puntuacion
 	private JLabel ponerPuntuacionJugadorDos;
 	
@@ -66,7 +70,7 @@ private JLabel fondoPanel, fondoPanelGeneral;
 	
 	@SuppressWarnings({ "removal" })
 	public void componentes() {
-
+	          
 			//-------------------------------------------Panel------------------------------------
 			
 			//Propiedades JPanel
@@ -85,7 +89,11 @@ private JLabel fondoPanel, fondoPanelGeneral;
 			fondoPanel.setLocation(0,0);			//nos permite definir desde donde va a empezar la imagen 
 			panel.add(fondoPanel, new Integer(1));		//Agregamos el fondo al panelPresentacion
 			
-		
+			botonSalir = new JButton("Salir");
+		    botonSalir.setBounds(55, 25, 100, 50);
+		    botonSalir.setFont(new Font("Showcard Gothic", Font.PLAIN, 20));
+		    botonSalir.addActionListener(this);
+		    panel.add(botonSalir, new Integer(2));
 		
 			//----------------------------------------Panel General----------------------------------
 			//Panel donde va a tener el tiempo y el nombre del jugador
@@ -153,7 +161,6 @@ private JLabel fondoPanel, fondoPanelGeneral;
 
 		}
 
-	
 	
 	// Getters and Setters-----
 	public JButton[][] getMatrizBotones() {
@@ -450,7 +457,6 @@ private JLabel fondoPanel, fondoPanelGeneral;
 	}
 	
 	
-	
 	//Labels Nombre de Jugadores---------------------------------------------
 		
 	@SuppressWarnings({ "removal", "null" })
@@ -738,8 +744,22 @@ private JLabel fondoPanel, fondoPanelGeneral;
 	}
 	
 	
-public Tableros() {
+	public void actionPerformed(ActionEvent e) {
+	   
+	   if (e.getSource() == botonSalir) {
+	   
+	      @SuppressWarnings("unused")
+         Menu menu = new Menu();
+	      
+	      frame.setVisible(false);
+	  }
+	   
+	}
+	
+	public Tableros() {
 		
 	}
 	
 }
+
+
