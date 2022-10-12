@@ -311,9 +311,7 @@ private JLabel fondoPanel, fondoPanelGeneral;
 		//Este metodo es llamado cuando el contador es = 2 	
 		public void validarImagenesModalidad2() {
 			
-			
-			
-			
+		   
 			if (getTemp() == getTemp2()) {
 				System.out.println("Cartas iguales");
 				//Si las cartas son iguales se deshabilita el boton y suma 10 puntos 
@@ -321,17 +319,15 @@ private JLabel fondoPanel, fondoPanelGeneral;
 				deshabilitarBoton();
 				if (contadorTurnoJugadores == 1) { //Actualiza la puntuacion en el jugador uno
 					
-					
 					puntuacion = puntuacion + 10;
 					setPuntuacion(puntuacion);
 					actualizarPuntuacion();
 					
-					
 				} //Actualiza la puntuacion en el jugador Dos
-				if (contadorTurnoJugadores == 2) {	
+				if (contadorTurnoJugadores == 2) {
 					
 					puntuacionJugador2 = puntuacionJugador2 + 10;
-					setPuntuacionJugador2(puntuacionJugador2);	
+					setPuntuacionJugador2(puntuacionJugador2);
 					actualizarPuntuacionModalidad2();
 					contadorTurnoJugadores = 0;
 				}
@@ -362,15 +358,15 @@ private JLabel fondoPanel, fondoPanelGeneral;
 	public void actualizarPuntuacion() {
 		
 		ponerPuntuacion.setText("Puntuacion: "+ getPuntuacion());
-		panelGeneral.add(ponerPuntuacion, new Integer(2));
+		panelGeneral.add(ponerPuntuacion, new Integer(5));
 	
 	}
 	@SuppressWarnings("removal")
 	public void actualizarPuntuacionModalidad2() {
 		
 		ponerPuntuacionJugadorDos.setText("Puntuacion: "+ getPuntuacionJugador2());
-		panelGeneral.add(ponerPuntuacionJugadorDos, new Integer(3));
-	
+		panelGeneral.add(ponerPuntuacionJugadorDos, new Integer(6));
+		
 	}
 	
 	
@@ -438,7 +434,7 @@ private JLabel fondoPanel, fondoPanelGeneral;
 		ponerPuntuacion.setBounds(50, 180, 500, 100);
 		ponerPuntuacion.setFont(new Font("Showcard Gothic", Font.PLAIN, 30));
 		ponerPuntuacion.setText("Puntuacion: "+ getPuntuacion());
-		panelGeneral.add(ponerPuntuacion, new Integer(5));
+		panelGeneral.add(ponerPuntuacion, new Integer(7));
 		
 	}
 	
@@ -446,10 +442,10 @@ private JLabel fondoPanel, fondoPanelGeneral;
 	public void labelPuntuacionJugadorDos() {
 		
 		ponerPuntuacionJugadorDos = new JLabel();
-		ponerPuntuacionJugadorDos.setBounds(50, 400, 500, 100);
+		ponerPuntuacionJugadorDos.setBounds(50, 330, 500, 100);
 		ponerPuntuacionJugadorDos.setFont(new Font("Showcard Gothic", Font.PLAIN, 30));
-		ponerPuntuacionJugadorDos.setText("Puntuacion: "+ getPuntuacion());
-		panelGeneral.add(ponerPuntuacionJugadorDos, new Integer(6));
+		ponerPuntuacionJugadorDos.setText("Puntuacion: "+ getPuntuacionJugador2());
+		panelGeneral.add(ponerPuntuacionJugadorDos, new Integer(8));
 		
 	}
 	
@@ -471,10 +467,10 @@ private JLabel fondoPanel, fondoPanelGeneral;
 	public void turnoJugador() {
 		
 		turnos = new JLabel();
-		turnos.setBounds(50, 300, 500, 100);
+		turnos.setBounds(50, 410, 500, 100);
 		turnos.setFont(new Font("Showcard Gothic", Font.PLAIN, 30));
 		turnos.setText("Jugador 1");	
-		panelGeneral.add(turnos, new Integer(9));
+		panelGeneral.add(turnos, new Integer(10));
 			
 	}
 	public void nombreJugadorTurno() {

@@ -12,6 +12,7 @@ public class ClasePrincipal {
 		
 		Juego ventana = new Juego();
 		ventana.setVisible(true);*/
+		
 	}
 
 }
